@@ -5,7 +5,12 @@ const app = express();
 app.use(cors());
 
 app.get('/', (req, res) => {
-    res.send("it's working");
+    try{
+        res.send("it's working");
+    }
+    catch(err){
+        res.send(err);
+    }
 })
 
 app.listen(4000, () => {
